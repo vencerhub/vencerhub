@@ -77,7 +77,7 @@ export const SERVICES_DATA = [
   },
   {
     id: "web-design",
-    title: "Web Design",
+    title: "Sites",
     shortDescription: "Criação de sites, Landing Pages e sistemas focados em conversão.",
     icon: Layout,
     tag: "Growth",
@@ -93,17 +93,17 @@ export const SERVICES_DATA = [
   },
   {
     id: "identity",
-    title: "Identity Visual",
+    title: "Design",
     shortDescription: "Design moderno para marcas que buscam o próximo nível.",
     icon: Palette,
     tag: "Design",
     image: "https://images.unsplash.com/photo-1572044162444-ad60f128bde2?auto=format&fit=crop&w=1200&q=80",
-    fullDescription: "Uma marca forte precisa de uma identidade coerente. Criamos logotipos, paletas de cores e tipografias que comunicam a essência do seu negócio e garantem que sua marca seja reconhecida e respeitada em qualquer lugar.",
+    fullDescription: "Uma marca forte precisa de uma identidade coerente. Criamos identidades visuais completas, desde a logo até os materiais para redes sociais e comunicação impressa, garantindo que sua marca seja reconhecida e respeitada em qualquer lugar.",
     benefits: [
-      "Criação de Logotipo e Variações",
+      "Identidade Visual (Logo)",
+      "Cards para Redes Sociais",
+      "Arte para Impressos",
       "Manual da Marca (Moodboard)",
-      "Identidade para Redes Sociais",
-      "Design de Materiais Acadêmicos",
       "Aplicações em Papelaria e Brindes"
     ]
   },

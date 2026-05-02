@@ -41,14 +41,48 @@ const Navigation = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollToSection('sobre')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Sobre</button>
-          <button onClick={() => scrollToSection('servicos')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Serviços</button>
+          <button onClick={() => scrollToSection('equipe')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Equipe</button>
+          <div className="relative group">
+            <button className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2">
+              <Menu className="w-4 h-4" /> Serviços
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-bg-dark border border-zinc-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 led-warm-glow rounded-md overflow-hidden flex flex-col">
+              <Link to="/#servicos" onClick={() => scrollToSection('servicos')} className="px-6 py-4 text-xs font-black uppercase text-amber-500 hover:bg-amber-500/10 border-b border-zinc-800 transition-colors">
+                Geral (Todos)
+              </Link>
+              <Link to="/servico/podcast" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Estúdio de Podcast
+              </Link>
+              <Link to="/servico/cursos" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Cursos Online
+              </Link>
+              <Link to="/servico/video" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Vídeos & Edição
+              </Link>
+              <Link to="/servico/fotografia" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Fotografia
+              </Link>
+              <Link to="/servico/web-design" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Sites
+              </Link>
+              <Link to="/servico/identity" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Design
+              </Link>
+              <Link to="/servico/drone" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors">
+                Drone
+              </Link>
+              <Link to="/servico/live-stream" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors border-t border-zinc-800">
+                Transmissão ao Vivo
+              </Link>
+            </div>
+          </div>
           <button onClick={() => scrollToSection('beneficios')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Diferenciais</button>
           <button onClick={() => scrollToSection('contato')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Contato</button>
           <button 
             onClick={() => scrollToSection('contato')}
             className="px-6 py-2 bg-[#f59e0b] text-black font-black text-[11px] uppercase tracking-widest hover:brightness-110 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)]"
           >
-            Falar com Especialista
+            Quero vencer!
           </button>
         </div>
 
@@ -62,11 +96,14 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 top-[80px] bg-bg-dark z-[70] flex flex-col p-10 gap-8 border-t border-zinc-800 animate-in slide-in-from-top duration-300">
           <button onClick={() => scrollToSection('sobre')} className="text-2xl font-black text-white uppercase italic text-left">Sobre</button>
+          <button onClick={() => scrollToSection('equipe')} className="text-2xl font-black text-white uppercase italic text-left">Equipe</button>
           <button onClick={() => scrollToSection('solucoes')} className="text-2xl font-black text-white uppercase italic text-left">Soluções</button>
-          <button onClick={() => scrollToSection('servicos')} className="text-2xl font-black text-white uppercase italic text-left">Serviços</button>
+          <button onClick={() => scrollToSection('servicos')} className="text-2xl font-black text-white uppercase italic text-left flex items-center gap-4">
+            <Menu className="w-8 h-8 text-amber-500" /> Serviços
+          </button>
           <button onClick={() => scrollToSection('beneficios')} className="text-2xl font-black text-white uppercase italic text-left">Diferenciais</button>
           <button onClick={() => scrollToSection('contato')} className="text-2xl font-black text-white uppercase italic text-left">Contato</button>
-          <button onClick={() => scrollToSection('contato')} className="glow-btn w-full text-center py-6 mt-4">Falar com Especialista</button>
+          <button onClick={() => scrollToSection('contato')} className="glow-btn w-full text-center py-6 mt-4">Quero vencer!</button>
         </div>
       )}
     </nav>
@@ -108,8 +145,10 @@ export default function App() {
                  </div>
               </div>
               <div className="space-y-4 text-xs font-bold text-zinc-400">
-                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-amber-500 led-warm-text">Localização</h4>
+                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-amber-500 led-warm-text">Localização e Contato</h4>
                  <p className="uppercase tracking-tight leading-relaxed">Av. Érico Veríssimo, 1140 <br/> Porto Alegre - RS</p>
+                 <p className="mt-4 uppercase tracking-tight leading-relaxed">+55 51 99744-1369</p>
+                 <p className="tracking-tight leading-relaxed">contato@vencerhub.com</p>
                  <p className="mt-8 text-zinc-600">© 2026 VencerHub</p>
               </div>
             </div>

@@ -61,7 +61,7 @@ export const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
             onClick={onCtaClick}
             className="glow-btn rounded-none"
           >
-            Falar com Especialista
+            Quero vencer!
           </button>
         </motion.div>
       </div>

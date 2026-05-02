@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero } from './Hero';
 import { AboutUs } from './AboutUs';
+import { TeamSection } from './TeamSection';
 import { Benefits } from './Benefits';
 import { PainPoints } from './PainPoints';
 import { ServicesList } from './ServicesList';
@@ -19,6 +20,8 @@ export const Home = () => {
       <Hero onCtaClick={() => scrollToSection('contato')} />
       
       <AboutUs />
+
+      <TeamSection />
 
       <PainPoints />
 

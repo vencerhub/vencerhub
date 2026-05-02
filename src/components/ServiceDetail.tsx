@@ -112,12 +112,12 @@ export const ServiceDetail = () => {
                 </p>
                 <div className="space-y-4 relative z-10">
                   <a 
-                    href="https://wa.me/5551999999999" 
+                    href="https://wa.me/5551997441369" 
                     target="_blank" 
                     rel="noreferrer"
                     className="glow-btn w-full"
                   >
-                    Falar com Atendimento <MessageSquare className="w-5 h-5" />
+                    Quero vencer! <MessageSquare className="w-5 h-5" />
                   </a>
                   <Link 
                     to="/" 

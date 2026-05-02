@@ -42,12 +42,12 @@ export const ContactSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="https://wa.me/5551999999999" 
+                href="https://wa.me/5551997441369" 
                 target="_blank" 
                 rel="noreferrer"
                 className="glow-btn"
               >
-                Falar com especialista <MessageSquare className="w-5 h-5" />
+                Quero vencer! <MessageSquare className="w-5 h-5" />
               </a>
             </div>
           </div>
