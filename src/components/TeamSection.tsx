@@ -6,13 +6,13 @@ const ceos = [
     name: "Rafael Berthes",
     role: "CEO & Fundador",
     desc: "Estrategista de negócios e conexões, transformando audiovisual em escala real.",
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    image: "/Rafael.webp"
   },
   {
     name: "Marco Revilo",
     role: "CEO & Fundador",
     desc: "Especialista em posicionamento e autoridade através de estética e resultados.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    image: "/Marcao.webp"
   }
 ];
 
