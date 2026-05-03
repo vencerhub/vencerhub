@@ -7,7 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
 
-export const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
+export const Hero = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   return (
     <section className="relative min-h-screen py-40 flex items-center justify-center overflow-hidden" id="hero">
       <div className="absolute inset-0 z-0">
@@ -58,7 +58,7 @@ export const Hero = ({ onCtaClick }: { onCtaClick: () => void }) => {
           className="flex flex-col sm:flex-row items-center gap-8"
         >
           <button 
-            onClick={onCtaClick}
+            onClick={onOpenLead || (() => {})}
             className="glow-btn rounded-none"
           >
             Quero vencer!

@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { ChevronLeft, CheckCircle2, MessageSquare, ArrowRight } from 'lucide-react';
 import { SERVICES_DATA } from '../constants/servicesData';
 
-export const ServiceDetail = () => {
+export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   const { serviceId } = useParams();
   const service = SERVICES_DATA.find(s => s.id === serviceId);
 
@@ -111,14 +111,12 @@ export const ServiceDetail = () => {
                   Não perca tempo com abordagens genéricas. Fale com um de nossos especialistas para ter um projeto adaptado à sua realidade, construindo seu ecossistema de vendas.
                 </p>
                 <div className="space-y-4 relative z-10">
-                  <a 
-                    href="https://wa.me/5551997441369" 
-                    target="_blank" 
-                    rel="noreferrer"
+                  <button 
+                    onClick={onOpenLead}
                     className="glow-btn w-full"
                   >
                     Quero vencer! <MessageSquare className="w-5 h-5" />
-                  </a>
+                  </button>
                   <Link 
                     to="/" 
                     className="w-full flex items-center justify-center py-5 border border-zinc-800 text-xs font-black uppercase tracking-widest hover:bg-zinc-800 transition-colors gap-2 text-white"
@@ -151,6 +149,58 @@ export const ServiceDetail = () => {
              </div>
           </div>
         </div>
+
+        {service.id === 'podcast' && (
+          <div className="space-y-16 mt-24 pt-24 border-t border-zinc-800">
+             <div className="text-center max-w-3xl mx-auto">
+                <h3 className="text-3xl md:text-5xl font-black uppercase italic text-white tracking-tighter mb-6">
+                   Duas Modalidades Prontas Para <span className="text-amber-500 not-italic">Escalar seu Nome</span>
+                </h3>
+                <p className="text-zinc-400 font-medium uppercase tracking-widest text-sm leading-relaxed">
+                   Escolha entre lançar seu próprio programa ou ser o grande convidado do PodeVencer.
+                </p>
+             </div>
+             
+             <div className="grid md:grid-cols-2 gap-10">
+                <div className="bg-bg-dark border border-zinc-800 p-8 rounded-lg shadow-2xl relative overflow-hidden group">
+                   <div className="absolute top-0 left-0 w-full h-1 bg-amber-500 led-warm-glow" />
+                   <h4 className="text-2xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-amber-500 transition-colors">
+                      PodeVencer <br/> <span className="text-sm font-bold tracking-widest text-zinc-400 not-italic">O Podcast para Vencedores</span>
+                   </h4>
+                   <p className="text-zinc-300 font-medium leading-relaxed mb-8">
+                      Participe do nosso podcast oficial da casa! Venha sentar na mesa do PodeVencer, compartilhar sua história, gerar autoridade instantânea e distribuir cortes de alto impacto pelas redes sociais.
+                   </p>
+                   <a href="https://www.youtube.com/@PodeVencer/streams" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-4 py-4 w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest transition-colors mb-6 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                      Assista no YouTube 
+                   </a>
+                   <div className="mt-6 mb-2">
+                     <p className="text-[10px] uppercase font-black tracking-widest text-amber-500 mb-2">Personalidades que já passaram por aqui</p>
+                   </div>
+                   <div className="grid grid-cols-3 gap-3">
+                      <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                      <img src="https://images.unsplash.com/photo-1516280440503-45f8cc02cc77?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                      <img src="https://images.unsplash.com/photo-1559548331-f9cb98001426?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                   </div>
+                </div>
+                
+                <div className="bg-bg-dark border border-zinc-800 p-8 rounded-lg shadow-2xl relative overflow-hidden group">
+                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 blur-[50px] rounded-full -z-10" />
+                   <h4 className="text-2xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-amber-500 transition-colors">
+                      Seu Próprio <br/> <span className="text-sm font-bold tracking-widest text-zinc-400 not-italic">Programa / Mesacast</span>
+                   </h4>
+                   <p className="text-zinc-300 font-medium leading-relaxed mb-6">
+                      Use toda a estrutura premium da VencerHub para filmar o *seu* podcast. Oferecemos o estúdio, cenografia, equipamentos hollywoodianos, operação multí-câmeras e edição completa focada em distribuição.
+                   </p>
+                   <ul className="mb-10 space-y-4">
+                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Cenografia Flexível & Personalizada</li>
+                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Operador de Cortes/Switching</li>
+                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Isolamento Acústico Direcionado</li>
+                   </ul>
+                   <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Studio" className="w-full h-36 object-cover rounded filter contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                </div>
+             </div>
+          </div>
+        )}
       </section>
 
       {/* Other Services Footer CTA */}

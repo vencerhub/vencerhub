@@ -8,7 +8,7 @@ import { ServicesList } from './ServicesList';
 import { ContactSection } from './ContactSection';
 import { FAQ } from './FAQ';
 
-export const Home = () => {
+export const Home = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -17,7 +17,7 @@ export const Home = () => {
     <main className="relative">
       <div className="bg-grid-dark absolute inset-0 pointer-events-none opacity-20" />
       
-      <Hero onCtaClick={() => scrollToSection('contato')} />
+      <Hero onOpenLead={onOpenLead} />
       
       <AboutUs />
 
