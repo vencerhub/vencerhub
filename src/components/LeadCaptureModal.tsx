@@ -13,15 +13,31 @@ export const LeadCaptureModal = ({ isOpen, onClose }: { isOpen: boolean, onClose
     objetivo: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulating CRM integration wait
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://pmgzxrsumjhvlxdlmxhx.supabase.co/functions/v1/vencer-leads', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer sb_publishable_UIxjDVI6QIbxcl0JnNph7g_8maGPN8J',
+          'apikey': 'sb_publishable_UIxjDVI6QIbxcl0JnNph7g_8maGPN8J'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStep(2);
+      } else {
+        console.error("Erro ao enviar lead");
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
       setIsLoading(false);
-      setStep(2);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

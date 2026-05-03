@@ -31,9 +31,13 @@ export const FloatingAIChat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('https://pmgzxrsumjhvlxdlmxhx.supabase.co/functions/v1/vencer-chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer sb_publishable_UIxjDVI6QIbxcl0JnNph7g_8maGPN8J',
+          'apikey': 'sb_publishable_UIxjDVI6QIbxcl0JnNph7g_8maGPN8J'
+        },
         body: JSON.stringify({ message: userMsg, history: messages })
       });
       
@@ -41,6 +45,9 @@ export const FloatingAIChat = () => {
       
       if (data.reply) {
          setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
+      } else if (data.error) {
+         // Mostrar erro real no chat para diagnóstico
+         setMessages(prev => [...prev, { role: 'assistant', content: `[DEBUG] ${data.error}` }]);
       } else {
          throw new Error('No reply');
       }
