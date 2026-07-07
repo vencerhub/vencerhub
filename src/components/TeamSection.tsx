@@ -17,12 +17,11 @@ const ceos = [
 ];
 
 const team = [
-  { name: "Nome", role: "Head de Conteúdo", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" },
-  { name: "Nome", role: "Editor de Vídeo", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" },
-  { name: "Nome", role: "Designer", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" },
-  { name: "Nome", role: "Social Media", image: "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=500&q=80" },
-  { name: "Nome", role: "Comercial", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" }
+  { name: "Karolinny Ritz", role: "Social Media", image: "/team/Karol.jpg.jpeg" },
+  { name: "Nicolas Fernandes", role: "Videomaker & Fotógrafo", image: "/team/nicolas.jpeg" },
+  { name: "Ana Barsante", role: "Comercial", image: "/team/ANA.jpeg" }
 ];
+
 
 export const TeamSection = () => {
   return (
