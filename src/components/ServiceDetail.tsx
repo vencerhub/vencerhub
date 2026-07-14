@@ -127,32 +127,59 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
              </div>
              
              {/* Portfolio Example section */}
-             <div className="mt-12 bg-black border border-zinc-900 rounded-lg overflow-hidden led-warm-glow group relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 z-10" />
-                <img 
-                  src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
-                  alt="Portfolio Exemplo" 
-                  className="w-full h-64 object-cover filter contrast-125 group-hover:scale-105 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute bottom-6 left-6 z-20">
-                   <p className="text-[10px] font-black uppercase tracking-widest text-amber-500 mb-2">Portfolio / Case de Sucesso</p>
-                   <h4 className="text-xl font-bold uppercase text-white">Produção Executiva</h4>
-                </div>
-             </div>
+             {!service.portfolio && (
+               <div className="mt-12 bg-black border border-zinc-900 rounded-lg overflow-hidden led-warm-glow group relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 z-10" />
+                  <img 
+                    src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
+                    alt="Portfolio Exemplo" 
+                    className="w-full h-64 object-cover filter contrast-125 group-hover:scale-105 transition-all duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute bottom-6 left-6 z-20">
+                     <p className="text-[10px] font-black uppercase tracking-widest text-amber-500 mb-2">Portfolio / Case de Sucesso</p>
+                     <h4 className="text-xl font-bold uppercase text-white">Produção Executiva</h4>
+                  </div>
+               </div>
+             )}
 
-             <div className="p-10 border border-amber-500/20 bg-amber-500/5 italic led-warm-glow">
-                <p className="text-amber-500 font-black text-sm uppercase tracking-widest mb-4 italic led-warm-text">"Mais forte que uma marca."</p>
-                <p className="text-zinc-400 text-xs font-bold leading-relaxed tracking-wider uppercase">
-                  Na Vencer Hub, através de personalização e estratégia fidedigna, construímos parcerias sólidas para alavancar seu modelo de negócios.
-                </p>
-             </div>
+              <div className="p-10 border border-amber-500/20 bg-amber-500/5 italic led-warm-glow">
+                 <p className="text-amber-500 font-black text-sm uppercase tracking-widest mb-4 italic led-warm-text">"Mais forte que uma marca."</p>
+                 <p className="text-zinc-400 text-xs font-bold leading-relaxed tracking-wider uppercase">
+                    Na Vencer Hub, através de personalização e estratégia fidedigna, construímos parcerias sólidas para alavancar seu modelo de negócios.
+                 </p>
+              </div>
           </div>
         </div>
 
-        {service.id === 'podcast' && (
-          <div className="space-y-16 mt-24 pt-24 border-t border-zinc-800">
-             <div className="text-center max-w-3xl mx-auto">
+      {/* Personalities Section - Full Width (Above Modalidades) */}
+      {service.id === 'podcast' && (
+        <section className="py-24 border-t border-zinc-800 bg-black/40 relative z-10 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-10 mb-12 text-center md:text-left">
+            <p className="text-[10px] uppercase font-black tracking-[0.4em] text-amber-500 mb-4 led-warm-text">
+              Personalidades
+            </p>
+            <h3 className="text-3xl md:text-5xl font-black uppercase italic text-white tracking-tighter">
+              Quem já passou <span className="text-amber-500 not-italic">por aqui</span>
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 w-full bg-zinc-950/80 border-y border-zinc-900">
+             <img src="/images/pesonalidades/PV048-85.jpg" alt="PodeVencer" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+             <img src="/images/pesonalidades/EJ015-13.jpg" alt="Entregando o Jogo" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+             <img src="/images/pesonalidades/BC001-56.jpg" alt="Banricoop" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+             <img src="/images/pesonalidades/IMG_2180.JPG" alt="Personalidade 1" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+             <img src="/images/pesonalidades/IMG_9256.JPG" alt="Personalidade 2" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+             <img src="/images/pesonalidades/_MG_1819.JPG" alt="Personalidade 3" className="w-full aspect-square object-cover object-center filter contrast-125 saturate-50 hover:saturate-100 hover:scale-105 transition-all duration-500" referrerPolicy="no-referrer" />
+          </div>
+        </section>
+      )}
+
+      {/* Modalidades Section (Below Personalidades) */}
+      {service.id === 'podcast' && (
+        <section className="py-24 bg-bg-dark border-t border-zinc-800 relative z-10">
+          <div className="max-w-7xl mx-auto px-6 md:px-10">
+             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h3 className="text-3xl md:text-5xl font-black uppercase italic text-white tracking-tighter mb-6">
                    Duas Modalidades Prontas Para <span className="text-amber-500 not-italic">Escalar seu Nome</span>
                 </h3>
@@ -173,14 +200,6 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                    <a href="https://www.youtube.com/@PodeVencer/streams" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-4 py-4 w-full bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-widest transition-colors mb-6 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                       Assista no YouTube 
                    </a>
-                   <div className="mt-6 mb-2">
-                     <p className="text-[10px] uppercase font-black tracking-widest text-amber-500 mb-2">Personalidades que já passaram por aqui</p>
-                   </div>
-                   <div className="grid grid-cols-3 gap-3">
-                      <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
-                      <img src="https://images.unsplash.com/photo-1516280440503-45f8cc02cc77?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
-                      <img src="https://images.unsplash.com/photo-1559548331-f9cb98001426?auto=format&fit=crop&w=300&q=80" alt="Convidados" className="w-full h-24 object-cover rounded filter contrast-125 saturate-50 group-hover:saturate-100 transition-all duration-700" referrerPolicy="no-referrer" />
-                   </div>
                 </div>
                 
                 <div className="bg-bg-dark border border-zinc-800 p-8 rounded-lg shadow-2xl relative overflow-hidden group">
@@ -196,12 +215,74 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                      <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Operador de Cortes/Switching</li>
                      <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Isolamento Acústico Direcionado</li>
                    </ul>
-                   <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Studio" className="w-full h-36 object-cover rounded filter contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
+                   <img src="/images/centro/studio.jpeg" alt="Studio" className="w-full h-36 object-cover rounded filter contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
                 </div>
              </div>
           </div>
-        )}
+        </section>
+      )}
       </section>
+
+      {/* Portfolio Section */}
+      {service.portfolio && service.portfolio.length > 0 && (
+        <section className="py-24 bg-bg-card relative border-t border-zinc-800">
+          <div className="absolute inset-0 bg-grid-dark pointer-events-none opacity-20" />
+          <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="text-[10px] uppercase font-black tracking-[0.4em] text-primary mb-4 led-bold-text">
+                Portfólio em Foco
+              </p>
+              <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none">
+                Trabalhos <br /> <span className="gradient-text-premium not-italic">Recentes.</span>
+              </h2>
+              <p className="text-zinc-400 text-sm font-bold uppercase tracking-wider leading-relaxed mt-6">
+                Clique em qualquer projeto abaixo para navegar pelas galerias exclusivas de entrega aos nossos parceiros.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {service.portfolio.map((item, index) => (
+                <motion.a
+                  key={index}
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="group block relative rounded-xl overflow-hidden glass-card border border-zinc-800 hover:border-primary/40 transition-all duration-500 h-[380px] led-bold-glow"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+                  
+                  {/* Hover visual highlight border overlay */}
+                  <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/25 rounded-xl transition-all duration-500 z-20 pointer-events-none" />
+
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="absolute inset-0 w-full h-full object-cover filter contrast-110 saturate-50 group-hover:scale-105 group-hover:saturate-100 transition-all duration-700"
+                  />
+                  
+                  <div className="absolute bottom-0 left-0 w-full p-8 z-20">
+                    <span className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 text-primary text-[8px] font-black uppercase tracking-widest rounded-full mb-3">
+                      Acessar Galeria
+                    </span>
+                    <h4 className="text-xl font-black uppercase text-white tracking-tight leading-tight mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-[10px] text-zinc-400 font-bold uppercase leading-normal tracking-wide">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+
 
       {/* Other Services Footer CTA */}
       <section className="py-20 bg-bg-card border-t border-zinc-800 relative z-10">

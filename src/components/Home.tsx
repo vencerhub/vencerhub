@@ -5,6 +5,7 @@ import { TeamSection } from './TeamSection';
 import { Benefits } from './Benefits';
 import { PainPoints } from './PainPoints';
 import { ServicesList } from './ServicesList';
+import { NewSpace } from './NewSpace';
 import { ContactSection } from './ContactSection';
 import { FAQ } from './FAQ';
 
@@ -30,6 +31,8 @@ export const Home = ({ onOpenLead }: { onOpenLead?: () => void }) => {
       </div>
 
       <ServicesList />
+
+      <NewSpace />
       
       <ContactSection />
       

@@ -36,3 +36,22 @@ export interface ServicePrice {
   nome: string;
   valorBase: number;
 }
+
+export interface ServicePortfolioItem {
+  title: string;
+  url: string;
+  image: string;
+  description: string;
+}
+
+export interface Service {
+  id: string;
+  title: string;
+  shortDescription: string;
+  icon: React.ComponentType<any>;
+  tag: string;
+  image: string;
+  fullDescription: string;
+  benefits: string[];
+  portfolio?: ServicePortfolioItem[];
+}

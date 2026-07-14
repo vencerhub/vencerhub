@@ -9,8 +9,9 @@ import {
   Settings, 
   GraduationCap 
 } from 'lucide-react';
+import { Service } from '../types';
 
-export const SERVICES_DATA = [
+export const SERVICES_DATA: Service[] = [
   {
     id: "podcast",
     title: "Estúdio de Podcast",
@@ -22,9 +23,45 @@ export const SERVICES_DATA = [
     benefits: [
       "Gravação Multicâmera Full HD",
       "Tratamento Acústico Profissional",
-      "Edição com Foco em Cortes (Reels/TikTok)",
-      "Transmissão ao Vivo (Opcional)",
-      "Ambiente Versátil e Decorado"
+      "Edição com Foco em Cortes (Reels/TikTok)"
+    ],
+    portfolio: [
+      {
+        title: "Estúdio Vencer Hub (Fotos)",
+        url: "https://vencerhub.pixieset.com/vencerhub/",
+        image: "/images/centro/studio.jpeg",
+        description: "Confira a estrutura física, iluminação e cenografia do nosso estúdio premium."
+      },
+      {
+        title: "PodeVencer Podcast",
+        url: "https://www.youtube.com/@PodeVencer",
+        image: "/images/podcast/podevencer.png",
+        description: "O podcast oficial da casa focado em empreendedorismo, mentalidade e alta performance."
+      },
+      {
+        title: "Advocast Delas",
+        url: "https://www.youtube.com/@advocastdelas",
+        image: "/images/podcast/Advocast.jpg",
+        description: "Podcast focado em advocacia feminina, empreendedorismo jurídico e carreira."
+      },
+      {
+        title: "Sou Old Cast",
+        url: "https://www.youtube.com/@SOUOLDCAST",
+        image: "/images/podcast/LOGO OLDCAST.jpg",
+        description: "Podcast com conversas e insights marcantes de veteranos do mercado."
+      },
+      {
+        title: "Entregando o Jogo",
+        url: "https://www.youtube.com/@EntregandooJogo",
+        image: "/images/podcast/ENTREGANDO-O-JOGOlogo.png",
+        description: "Estratégias reais e bastidores de negócios revelados sem filtros."
+      },
+      {
+        title: "Poderosas do Digital",
+        url: "https://www.youtube.com/@poderosasdodigital",
+        image: "/images/podcast/Poderosas do digital.jpg",
+        description: "Protagonismo feminino, liderança, autoconfiança e marketing digital para mulheres."
+      }
     ]
   },
   {
@@ -73,6 +110,44 @@ export const SERVICES_DATA = [
       "Fotografia de Produtos e Ambientes",
       "Direção de Pose de Alta Performance",
       "Edição de Pele e Luz Naturalista"
+    ],
+    portfolio: [
+      {
+        title: "Formatura Ana & Corporativo",
+        url: "https://vencerhub.pixieset.com/formaturaana/",
+        image: "https://images.pixieset.com/11999469/e6c5efb84c7ec0957b9e311eaad09a1c-large.jpg",
+        description: "Registros de eventos acadêmicos, formaturas e momentos marcantes de celebração."
+      },
+      {
+        title: "Davi Aniversário 1 Ano",
+        url: "https://vencerhub4.pixieset.com/danianiversario1ano/",
+        image: "https://images.pixieset.com/762895201/0f337e888a1ef225c4db92d65983dcc3-large.jpeg",
+        description: "Fotografia afetiva de aniversários infantis e festas de 1 ano, capturando cada momento."
+      },
+      {
+        title: "Assembleia Banricoop & Retratos",
+        url: "https://vencerhub3.pixieset.com/assembleiabanricoop/",
+        image: "https://images.pixieset.com/722326311/53dcb8bf4a429d3436b896b2ce6ad456-large.jpg",
+        description: "Imagens institucionais de assembleias formais, cooperativismo e lideranças corporativas."
+      },
+      {
+        title: "Esportes",
+        url: "https://vencerhub3.pixieset.com/esportes/",
+        image: "https://images.pixieset.com/309946801/d99d2206301bb67ba5953c3ca9a3aa2b-large.JPG",
+        description: "Fotografia esportiva de alta dinâmica, registrando ação, velocidade e a emoção dos atletas."
+      },
+      {
+        title: "Casamento Giuliane & Lukas",
+        url: "https://vencerhub.pixieset.com/giulianeandlukas/",
+        image: "https://images.pixieset.com/54750709/473f42c507eae302fb776a97c993d6c9-cover.jpg",
+        description: "Cobertura fotográfica completa de casamentos com sensibilidade artística e sofisticação."
+      },
+      {
+        title: "Malta Talks no Heliponto",
+        url: "https://vencerhub5.pixieset.com/maltatalksnoheliponto/",
+        image: "https://images.pixieset.com/088472411/2f51075837967023aae7cc8fae78a953-large.jpg",
+        description: "Coberturas de alto padrão em locações premium, talk shows e networking de ponta."
+      }
     ]
   },
   {
