@@ -9,7 +9,7 @@ import { Home } from './components/Home';
 import { ServiceDetail } from './components/ServiceDetail';
 import { FloatingAIChat } from './components/FloatingAIChat';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
-import { Check, Menu, X, Instagram } from 'lucide-react';
+import { Check, Menu, X, Instagram, Camera } from 'lucide-react';
 
 const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -75,6 +75,9 @@ const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
               <Link to="/servico/live-stream" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-zinc-300 hover:bg-zinc-800 hover:text-white transition-colors border-t border-zinc-800">
                 Transmissão ao Vivo
               </Link>
+              <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="px-6 py-3 text-[10px] font-bold uppercase text-amber-500 hover:bg-amber-500/10 hover:text-amber-400 transition-colors border-t border-zinc-800 flex items-center gap-2">
+                <Camera className="w-3 h-3" /> Fotto (Galerias)
+              </a>
             </div>
           </div>
           <button onClick={() => scrollToSection('beneficios')} className="text-[11px] font-bold text-secondary-text uppercase tracking-widest hover:text-primary transition-colors">Diferenciais</button>
@@ -104,6 +107,9 @@ const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
           </button>
           <button onClick={() => scrollToSection('beneficios')} className="text-2xl font-black text-white uppercase italic text-left">Diferenciais</button>
           <button onClick={() => scrollToSection('contato')} className="text-2xl font-black text-white uppercase italic text-left">Contato</button>
+          <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 text-xl font-black text-amber-500 uppercase italic text-left">
+            <Camera className="w-6 h-6" /> Fotto (Galerias)
+          </a>
           <button onClick={() => { setIsMenuOpen(false); onOpenLead?.(); }} className="glow-btn w-full text-center py-6 mt-4">Quero vencer!</button>
         </div>
       )}
@@ -146,6 +152,9 @@ export default function App() {
                  <div className="flex flex-col gap-3">
                    <Link to="/" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">Home</Link>
                    <button onClick={() => { window.scrollTo({top: 0, behavior: 'smooth'}); }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Voltar ao Topo</button>
+                   <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                     <Camera className="w-3 h-3" /> Fotto (Galerias)
+                   </a>
                  </div>
               </div>
               <div className="space-y-4 text-xs font-bold text-zinc-400">

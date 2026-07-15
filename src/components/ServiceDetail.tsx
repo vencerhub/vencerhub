@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ChevronLeft, CheckCircle2, MessageSquare, ArrowRight } from 'lucide-react';
+import { ChevronLeft, CheckCircle2, MessageSquare, ArrowRight, Camera } from 'lucide-react';
 import { SERVICES_DATA } from '../constants/servicesData';
 
 export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
@@ -97,9 +97,22 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                       <span className="font-bold uppercase tracking-tight text-sm text-white group-hover:text-shadow-sm">{b}</span>
                     </motion.div>
                   ))}
-                </div>
-             </div>
-          </div>
+                 </div>
+              </div>
+
+              {/* Fotto CTA - only for fotografia service */}
+              {service.id === 'fotografia' && (
+                <a
+                  href="https://vencerhub.fotto.com.br/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 w-full flex items-center justify-center gap-3 py-5 border-2 border-amber-500 bg-amber-500/10 text-amber-500 font-black text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-all duration-300 led-warm-glow group"
+                >
+                  <Camera className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  Acesse nossas coberturas ao vivo no Fotto →
+                </a>
+              )}
+           </div>
 
           <div className="space-y-12 relative z-10">
              <div className="bg-bg-dark p-10 border border-amber-500/20 relative overflow-hidden group shadow-[0_0_40px_rgba(245,158,11,0.1)] glass-card">
@@ -203,20 +216,19 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                 </div>
                 
                 <div className="bg-bg-dark border border-zinc-800 p-8 rounded-lg shadow-2xl relative overflow-hidden group">
-                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 blur-[50px] rounded-full -z-10" />
-                   <h4 className="text-2xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-amber-500 transition-colors">
-                      Seu Próprio <br/> <span className="text-sm font-bold tracking-widest text-zinc-400 not-italic">Programa / Mesacast</span>
-                   </h4>
-                   <p className="text-zinc-300 font-medium leading-relaxed mb-6">
-                      Use toda a estrutura premium da VencerHub para filmar o *seu* podcast. Oferecemos o estúdio, cenografia, equipamentos hollywoodianos, operação multí-câmeras e edição completa focada em distribuição.
-                   </p>
-                   <ul className="mb-10 space-y-4">
-                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Cenografia Flexível & Personalizada</li>
-                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Operador de Cortes/Switching</li>
-                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Isolamento Acústico Direcionado</li>
-                   </ul>
-                   <img src="/images/centro/studio.jpeg" alt="Studio" className="w-full h-36 object-cover rounded filter contrast-125 opacity-80 group-hover:opacity-100 transition-all duration-700" referrerPolicy="no-referrer" />
-                </div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 blur-[50px] rounded-full -z-10" />
+                    <h4 className="text-2xl font-black text-white uppercase italic tracking-tight mb-4 group-hover:text-amber-500 transition-colors">
+                       Seu Próprio <br/> <span className="text-sm font-bold tracking-widest text-zinc-400 not-italic">Programa / Podcast</span>
+                    </h4>
+                    <p className="text-zinc-300 font-medium leading-relaxed mb-6">
+                       Tenha o seu próprio programa profissional gravado na estrutura premium da VencerHub. Oferecemos estúdio acústico exclusivo, cenografia customizada, câmeras de alta performance e operação técnica especializada com edição focada em distribuição e cortes virais.
+                    </p>
+                    <ul className="mb-10 space-y-4">
+                      <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Cenografia Flexível & Personalizada</li>
+                      <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Operador de Cortes/Switching</li>
+                      <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-zinc-400"><CheckCircle2 className="w-4 h-4 text-amber-500" /> Isolamento Acústico Direcionado</li>
+                    </ul>
+                 </div>
              </div>
           </div>
         </section>

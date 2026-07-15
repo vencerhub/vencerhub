@@ -1,13 +1,13 @@
-import { 
-  Mic2, 
-  Video, 
-  Camera, 
-  Palette, 
+import {
+  Mic2,
+  Video,
+  Camera,
+  Palette,
   Radio,
-  Plane, 
-  Layout, 
-  Settings, 
-  GraduationCap 
+  Plane,
+  Layout,
+  Settings,
+  GraduationCap
 } from 'lucide-react';
 import { Service } from '../types';
 
@@ -45,7 +45,7 @@ export const SERVICES_DATA: Service[] = [
         description: "Podcast focado em advocacia feminina, empreendedorismo jurídico e carreira."
       },
       {
-        title: "Sou Old Cast",
+        title: "Oldcast",
         url: "https://www.youtube.com/@SOUOLDCAST",
         image: "/images/podcast/LOGO OLDCAST.jpg",
         description: "Podcast com conversas e insights marcantes de veteranos do mercado."
@@ -76,8 +76,50 @@ export const SERVICES_DATA: Service[] = [
       "Roteirização e Estruturação de Aulas",
       "Cenografia Personalizada",
       "Edição com Material de Apoio Visual",
-      "Assessoria para Plataformas de Hospedagem",
-      "Qualidade de Cinema para sua Mentoria"
+      "Assessoria para Plataformas de Hospedagem"],
+    portfolio: [
+      {
+        title: "Curso de Canto - Nicollas Dellavega",
+        url: "https://www.youtube.com/watch?v=ZIX3bj_0Ns0",
+        image: "https://img.youtube.com/vi/ZIX3bj_0Ns0/maxresdefault.jpg",
+        description: "Produção de vídeo de introdução e técnica vocal com foco em posicionamento artístico."
+      },
+      {
+        title: "Curso de Brigadeiro - Receita Morango",
+        url: "https://www.youtube.com/watch?v=wGOWZugWCYU",
+        image: "https://img.youtube.com/vi/wGOWZugWCYU/maxresdefault.jpg",
+        description: "Direção de cena e captação macro gourmet de alta definição."
+      },
+      {
+        title: "Curso Bem Treinada - Boas Vindas",
+        url: "https://www.youtube.com/watch?v=oV1zGLcgU2s",
+        image: "https://img.youtube.com/vi/oV1zGLcgU2s/maxresdefault.jpg",
+        description: "Vídeo institucional de abertura e recepção de alunos para portal fitness."
+      },
+      {
+        title: "Curso Método Lapidar - Agachamento",
+        url: "https://www.youtube.com/watch?v=1HMtN8rEwxI",
+        image: "https://img.youtube.com/vi/1HMtN8rEwxI/maxresdefault.jpg",
+        description: "Aulas práticas com captação profissional e clareza didática de movimento."
+      },
+      {
+        title: "Indigoo Cursos - Boas Vindas",
+        url: "https://www.youtube.com/watch?v=koPZH5uazQ8",
+        image: "https://img.youtube.com/vi/koPZH5uazQ8/maxresdefault.jpg",
+        description: "Estruturação visual de abertura de cursos corporativos e empresariais."
+      },
+      {
+        title: "Curso Método Lapidar - Balanço Energético",
+        url: "https://www.youtube.com/watch?v=HuLFvmrB5eo",
+        image: "https://img.youtube.com/vi/HuLFvmrB5eo/maxresdefault.jpg",
+        description: "Produção de aulas teóricas, grafismos didáticos e materiais de suporte visual."
+      },
+      {
+        title: "Curso de Transição de Carreira",
+        url: "https://youtu.be/Tj9ZztlbpEE",
+        image: "https://img.youtube.com/vi/Tj9ZztlbpEE/maxresdefault.jpg",
+        description: "Produção de conteúdo educacional focado em reposicionamento profissional e mudança de carreira."
+      }
     ]
   },
   {
@@ -164,6 +206,38 @@ export const SERVICES_DATA: Service[] = [
       "Sistemas de Gestão Personalizados",
       "SEO e Velocidade de Carregamento",
       "Design UX/UI Exclusivo"
+    ],
+    portfolio: [
+      {
+        title: "ABEE-RS",
+        url: "https://abee-rs.org.br",
+        image: "/images/sites/abee.png",
+        description: "Portal institucional e de serviços para a Associação Brasileira de Engenheiros Eletricistas do RS."
+      },
+      {
+        title: "Dance360",
+        url: "https://dance360.com.br",
+        image: "/images/sites/dance360.png",
+        description: "Plataforma premium EAD voltada para ensino dinâmico e metodologias de dança."
+      },
+      {
+        title: "Menu de Negócios",
+        url: "https://menudenegocios.com",
+        image: "/images/sites/menudenegocios.png",
+        description: "Plataforma de inteligência comercial, fomento a negócios locais e conexões."
+      },
+      {
+        title: "IBAPE-RS",
+        url: "https://ibape-rs.org.br",
+        image: "/images/sites/ibapers.png",
+        description: "Portal oficial de avaliações, cursos especializados e perícias de engenharia do RS."
+      },
+      {
+        title: "Igel Sobrea Advocacia",
+        url: "https://igelsobrea.com.br",
+        image: "/images/sites/igelsobrea.png",
+        description: "Website moderno de advocacia especializada com design corporativo de alto padrão."
+      }
     ]
   },
   {

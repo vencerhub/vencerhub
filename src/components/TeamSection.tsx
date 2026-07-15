@@ -18,7 +18,7 @@ const ceos = [
 
 const team = [
   { name: "Karolinny Ritz", role: "Social Media", image: "/team/Karol.jpg.jpeg" },
-  { name: "Nicolas Fernandes", role: "Videomaker & Fotógrafo", image: "/team/nicolas.jpeg" },
+  { name: "Nícolas Fernandes", role: "Videomaker & Fotógrafo", image: "/team/nicolas.jpeg" },
   { name: "Ana Barsante", role: "Comercial", image: "/team/ANA.jpeg" }
 ];
 
@@ -28,12 +28,12 @@ export const TeamSection = () => {
     <section className="py-32 bg-transparent relative z-10 overflow-hidden" id="equipe">
       <div className="absolute inset-0 bg-bg-dark z-0" />
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/5 blur-[120px] rounded-full z-0 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
-        
+
         {/* Block 1: Introduction */}
         <div className="text-center md:text-left mb-24 max-w-3xl">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -41,7 +41,7 @@ export const TeamSection = () => {
           >
             Quem Somos
           </motion.p>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export const TeamSection = () => {
           >
             Quem está por trás da <span className="gradient-text-premium not-italic">Vencer Hub</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -64,7 +64,7 @@ export const TeamSection = () => {
         {/* Block 2: CEOs */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-24">
           {ceos.map((ceo, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,14 +74,14 @@ export const TeamSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
               <div className="absolute inset-0 bg-amber-500/10 mix-blend-overlay z-10 pointer-events-none" />
-              
-              <img 
-                src={ceo.image} 
+
+              <img
+                src={ceo.image}
                 alt={ceo.name}
                 className="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-50 group-hover:scale-110 group-hover:saturate-100 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              
+
               <div className="absolute bottom-0 left-0 w-full p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-12 h-1 bg-amber-500 led-warm-glow mb-6 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100" />
                 <h3 className="text-3xl font-black uppercase text-white tracking-tighter mb-1">{ceo.name}</h3>
@@ -101,10 +101,10 @@ export const TeamSection = () => {
               A <span className="gradient-text-premium not-italic">Equipe</span>
             </h3>
           </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -113,8 +113,8 @@ export const TeamSection = () => {
                 className="group relative rounded-lg overflow-hidden glass-card border border-zinc-800 hover:border-amber-500/20 transition-all duration-300 aspect-[3/4] led-warm-glow flex flex-col justify-end"
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10" />
-                <img 
-                  src={member.image} 
+                <img
+                  src={member.image}
                   alt={member.name}
                   className="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-50 group-hover:scale-105 group-hover:saturate-100 transition-all duration-500"
                   referrerPolicy="no-referrer"
