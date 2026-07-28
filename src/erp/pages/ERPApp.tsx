@@ -36,129 +36,138 @@ function ERPLogin() {
   const { signIn } = useERP();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col justify-between p-4 md:p-8 font-sans relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col font-sans relative overflow-x-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#22c55e]/5 via-transparent to-transparent pointer-events-none" />
 
       {/* Top Header */}
-      <div className="max-w-5xl mx-auto w-full flex items-center justify-between py-4 border-b border-white/5 relative z-10">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/images/logo/logo.png" alt="VencerHub" className="h-10 w-auto" />
-        </Link>
+      <header className="max-w-6xl mx-auto w-full flex items-center justify-between py-6 px-6 border-b border-white/5 relative z-10">
+        <div className="flex items-center gap-2">
+          <img src="/images/logo/logo.png" alt="Vencer HUB" className="h-10 w-auto" />
+        </div>
         <Link
           to="/"
-          className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors font-medium bg-white/5 px-3 py-1.5 rounded-lg border border-white/8"
+          className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors font-medium bg-white/5 px-4 py-2 rounded-lg border border-white/8"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Voltar ao site principal
         </Link>
-      </div>
+      </header>
 
-      {/* Main Container */}
-      <main className="max-w-5xl mx-auto w-full my-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+      <main className="max-w-6xl mx-auto w-full px-6 py-12 space-y-20 relative z-10 flex-grow">
         
-        {/* Left Column: App Purpose & Google Verification details */}
-        <div className="lg:col-span-7 space-y-6 text-left">
-          <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 text-[#22c55e] text-xs font-bold px-3 py-1 rounded-full">
-            <Zap className="w-3.5 h-3.5" /> Sistema de Gestão Audiovisual
+        {/* Seção 1: Sobre o Aplicativo */}
+        <section className="space-y-6 max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 text-[#22c55e] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            <Zap className="w-3.5 h-3.5" /> Sobre o Aplicativo
           </div>
-
-          <h1 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
             Vencer HUB
           </h1>
-
-          <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium">
-            O <strong>Vencer HUB</strong> (plataforma Vencer ERP) é o aplicativo integrado de gestão empresarial desenvolvido para empresas de produção audiovisual, estúdios de podcast e produtoras de conteúdo.
-          </p>
-
-          {/* App Purpose Box */}
-          <div className="bg-[#111111] border border-white/8 rounded-2xl p-6 space-y-4">
-            <h2 className="text-xs font-black uppercase tracking-widest text-[#22c55e] flex items-center gap-2">
-              <Building2 className="w-4 h-4" /> Finalidade do Aplicativo
-            </h2>
-            <p className="text-xs text-zinc-300 leading-relaxed">
-              O software otimiza todas as etapas operacionais e financeiras de uma produtora audiovisual:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-400">
-              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
-                <span>CRM & Score Inteligente de Clientes</span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
-                <span>Gestão de Projetos e Prontuário</span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
-                <span>Controle Financeiro & DRE por Projeto</span>
-              </div>
-              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
-                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
-                <span>Checklists Pós-Produção & Ocorrências</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Google OAuth Use Notice */}
-          <div className="bg-[#111111] border border-white/8 rounded-2xl p-6 space-y-3">
-            <h2 className="text-xs font-black uppercase tracking-widest text-zinc-400 flex items-center gap-2">
-              <Lock className="w-4 h-4 text-amber-400" /> Autenticação Google OAuth
-            </h2>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Utilizamos a autenticação segura do Google OAuth para validar a identidade dos colaboradores e gerenciar permissões de acesso por perfil (Admin, Comercial, Produção, Gestão e Financeiro).
-            </p>
-          </div>
-        </div>
-
-        {/* Right Column: Google Login Box */}
-        <div className="lg:col-span-5 bg-[#111111] border border-white/10 rounded-2xl p-8 space-y-6 shadow-2xl">
-          <div>
-            <h2 className="text-xl font-black text-white">Acessar o Vencer HUB</h2>
-            <p className="text-xs text-zinc-500 mt-1">Entre com sua conta Google profissional</p>
-          </div>
-
-          <button
-            onClick={signIn}
-            className="w-full flex items-center justify-center gap-3 bg-white text-gray-900 font-bold text-sm py-3.5 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:scale-[1.01]"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-            </svg>
-            Entrar com Google
-          </button>
-
-          {!isSupabaseConfigured && (
-            <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl p-4">
-              <p className="text-[11px] text-amber-400 font-semibold mb-1">Modo Demonstração</p>
-              <p className="text-[10px] text-zinc-500 leading-relaxed">
-                Clique no botão acima para testar o sistema como Admin Master (<code className="text-zinc-300">vencerhub@gmail.com</code>).
+          <div className="space-y-4 text-sm md:text-base text-zinc-400 leading-relaxed font-medium bg-[#111111] border border-white/5 p-6 md:p-8 rounded-2xl">
+            <p><strong className="text-white">Nome oficial do aplicativo:</strong> Vencer HUB</p>
+            <p><strong className="text-white">Empresa desenvolvedora:</strong> Vencer HUB</p>
+            <p><strong className="text-white">Finalidade do sistema:</strong> O Vencer HUB é uma plataforma integrada de gestão empresarial desenvolvida especificamente para centralizar e otimizar as operações internas.</p>
+            <p><strong className="text-white">Público-alvo:</strong> Colaboradores, gestores e equipe interna da produtora Vencer HUB.</p>
+            
+            <div className="flex items-start gap-3 bg-red-500/10 border border-red-500/20 p-4 rounded-xl mt-6">
+              <ShieldAlert className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+              <p className="text-xs text-red-200">
+                <strong className="text-red-400">Atenção:</strong> Este é um sistema privado e de uso restrito. O acesso é destinado estritamente a usuários autorizados e previamente cadastrados pela administração.
               </p>
             </div>
-          )}
-
-          <div className="pt-4 border-t border-white/5 space-y-3">
-            <div className="flex items-center gap-2 text-[11px] text-zinc-500">
-              <ShieldCheck className="w-4 h-4 text-[#22c55e] shrink-0" />
-              <span>Conexão criptografada via Google OAuth 2.0</span>
-            </div>
-            <p className="text-[10px] text-zinc-600 leading-relaxed">
-              Novos usuários cadastrados entram na fila para aprovação do administrador master.
-            </p>
           </div>
-        </div>
+        </section>
+
+        {/* Seção 2: Funcionalidades */}
+        <section className="space-y-8">
+          <h2 className="text-2xl font-black text-white flex items-center gap-3">
+            <Building2 className="w-6 h-6 text-[#22c55e]" /> Funcionalidades
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { title: "CRM", desc: "Gestão inteligente de relacionamento com clientes." },
+              { title: "Gestão Financeira", desc: "Controle financeiro e análise de DRE." },
+              { title: "Gestão de Projetos", desc: "Acompanhamento detalhado de prazos e entregas." },
+              { title: "Produção Audiovisual", desc: "Controle de etapas e checklists de produção." },
+              { title: "Controle de Clientes", desc: "Histórico completo de serviços e análise de score." },
+              { title: "Autenticação Google OAuth", desc: "Login seguro, criptografado e integrado." }
+            ].map((feature, i) => (
+              <div key={i} className="bg-[#111111] border border-white/5 hover:border-[#22c55e]/30 transition-colors p-6 rounded-2xl flex flex-col gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#22c55e]" />
+                <h3 className="font-bold text-white text-sm">{feature.title}</h3>
+                <p className="text-xs text-zinc-500">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Seção 3: Autenticação & Login */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-[#111111] border border-white/5 rounded-3xl p-8 lg:p-12">
+          <div className="space-y-8">
+            <h2 className="text-2xl font-black text-white flex items-center gap-3">
+              <Lock className="w-6 h-6 text-[#22c55e]" /> Autenticação
+            </h2>
+            <div className="space-y-5 text-sm text-zinc-400 leading-relaxed">
+              <p>O acesso ao <strong>Vencer HUB</strong> exige validação de identidade segura corporativa.</p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-xs md:text-sm">
+                  <ShieldCheck className="w-5 h-5 text-[#22c55e] shrink-0" /> 
+                  <span>O login Google é utilizado apenas para autenticação e verificação de identidade.</span>
+                </li>
+                <li className="flex items-start gap-3 text-xs md:text-sm">
+                  <ShieldCheck className="w-5 h-5 text-[#22c55e] shrink-0" /> 
+                  <span>Nenhum dado da conta Google é compartilhado com terceiros ou utilizado para outros fins.</span>
+                </li>
+                <li className="flex items-start gap-3 text-xs md:text-sm">
+                  <ShieldCheck className="w-5 h-5 text-[#22c55e] shrink-0" /> 
+                  <span>Apenas nome, email e foto são utilizados para identificação visual e nominal do usuário logado no painel.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="bg-black/50 border border-white/5 rounded-2xl p-8 space-y-8">
+            <div className="text-center space-y-2">
+              <h3 className="text-xl font-black text-white">Acessar o Vencer HUB</h3>
+              <p className="text-xs text-zinc-500">Identifique-se com sua conta corporativa</p>
+            </div>
+            
+            <button
+              onClick={signIn}
+              className="w-full flex items-center justify-center gap-3 bg-white text-gray-900 font-bold text-sm py-4 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:scale-[1.02]"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              Entrar com Google
+            </button>
+
+            {!isSupabaseConfigured && (
+              <div className="text-center mt-4">
+                <p className="text-[10px] text-amber-500 font-bold">Modo de demonstração ativado</p>
+              </div>
+            )}
+          </div>
+        </section>
+
       </main>
 
-      {/* Footer Legal Links for Google OAuth Verification */}
-      <footer className="max-w-5xl mx-auto w-full pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 relative z-10">
-        <p>© 2026 Vencer Hub Produções Ltda. Todos os direitos reservados.</p>
-        <div className="flex items-center gap-6">
-          <Link to="/politica-de-privacidade" className="hover:text-white transition-colors">
-            Política de Privacidade (LGPD)
-          </Link>
-          <Link to="/termos-de-uso" className="hover:text-white transition-colors">
-            Termos de Serviço
-          </Link>
+      {/* Rodapé Institucional */}
+      <footer className="border-t border-white/5 bg-[#050505]">
+        <div className="max-w-6xl mx-auto w-full px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-500">
+          <div className="flex items-center gap-4">
+            <img src="/images/logo/logo.png" alt="Vencer HUB" className="h-6 w-auto opacity-50 grayscale" />
+            <p className="font-medium">Empresa: Vencer HUB</p>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4 font-medium">
+            <a href="mailto:vencerhub@gmail.com" className="hover:text-white transition-colors">Contato</a>
+            <Link to="/politica-de-privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link>
+            <Link to="/termos-de-uso" className="hover:text-white transition-colors">Termos de Uso</Link>
+            <span className="text-zinc-700">Desenvolvido por Vencer HUB</span>
+          </div>
         </div>
       </footer>
     </div>

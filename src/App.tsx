@@ -11,8 +11,7 @@ import { FloatingAIChat } from './components/FloatingAIChat';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
 import { LegalModal } from './components/LegalModal';
 import { SERVICES_DATA } from './constants/servicesData';
-import { Check, Menu, X, Instagram, Camera, Zap } from 'lucide-react';
-import { ERPApp } from './erp/pages/ERPApp';
+import { Check, Menu, X, Instagram, Camera } from 'lucide-react';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 
@@ -155,9 +154,7 @@ function PublicLayout({
                  <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
                    <Camera className="w-3 h-3" /> Fotto (Galerias)
                  </a>
-                 <Link to="/erp" className="text-xs font-bold text-zinc-600 hover:text-zinc-400 transition-colors flex items-center gap-1 pt-2 border-t border-zinc-800/60">
-                   <Zap className="w-3 h-3 text-zinc-500" /> Área Restrita (ERP)
-                 </Link>
+
                </div>
             </div>
             <div className="space-y-4">
@@ -246,9 +243,7 @@ export default function App() {
             </PublicLayout>
           }
         />
-        <Route path="/erp/*" element={<ERPApp />} />
-        <Route path="/ERP/*" element={<ERPApp />} />
-        <Route path="/Erp/*" element={<ERPApp />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -8,7 +8,7 @@ import { ServicesList } from './ServicesList';
 import { NewSpace } from './NewSpace';
 import { ContactSection } from './ContactSection';
 import { FAQ } from './FAQ';
-import { AppPurposeSection } from './AppPurposeSection';
+
 import { Camera } from 'lucide-react';
 
 export const Home = ({ onOpenLead }: { onOpenLead?: () => void }) => {
@@ -66,7 +66,7 @@ export const Home = ({ onOpenLead }: { onOpenLead?: () => void }) => {
       
       <ContactSection />
 
-      <AppPurposeSection />
+
       
       <FAQ />
     </main>
