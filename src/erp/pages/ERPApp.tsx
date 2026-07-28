@@ -14,7 +14,7 @@ import { AIAssistantModule } from '../modules/AIAssistantModule';
 import { ExecutiveBoardModule } from '../modules/ExecutiveBoardModule';
 import { UserManagementModule } from '../modules/UserManagementModule';
 import { isSupabaseConfigured } from '../../lib/supabase';
-import { Zap, Clock, XCircle, ShieldAlert, LogOut, ArrowLeft } from 'lucide-react';
+import { Zap, Clock, XCircle, ShieldAlert, LogOut, ArrowLeft, ShieldCheck, CheckCircle2, Lock, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MODULE_MAP: Record<string, React.FC> = {
@@ -36,25 +36,88 @@ function ERPLogin() {
   const { signIn } = useERP();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col justify-between p-4 md:p-8 font-sans relative overflow-x-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#22c55e]/5 via-transparent to-transparent pointer-events-none" />
-      <div className="w-full max-w-sm relative z-10">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <img src="/images/logo/logo.png" alt="VencerHub" className="h-12 w-auto mx-auto" />
+
+      {/* Top Header */}
+      <div className="max-w-5xl mx-auto w-full flex items-center justify-between py-4 border-b border-white/5 relative z-10">
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/images/logo/logo.png" alt="VencerHub" className="h-10 w-auto" />
+        </Link>
+        <Link
+          to="/"
+          className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors font-medium bg-white/5 px-3 py-1.5 rounded-lg border border-white/8"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" /> Voltar ao site principal
+        </Link>
+      </div>
+
+      {/* Main Container */}
+      <main className="max-w-5xl mx-auto w-full my-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+        
+        {/* Left Column: App Purpose & Google Verification details */}
+        <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 text-[#22c55e] text-xs font-bold px-3 py-1 rounded-full">
+            <Zap className="w-3.5 h-3.5" /> Sistema de Gestão Audiovisual
           </div>
-          <p className="text-zinc-500 text-xs uppercase tracking-widest font-bold mt-2">ERP Inteligente Audiovisual</p>
+
+          <h1 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tight leading-tight">
+            Vencer HUB ERP
+          </h1>
+
+          <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium">
+            O <strong>Vencer HUB ERP</strong> é a plataforma integrada de gestão empresarial desenvolvida especialmente para empresas de produção audiovisual, estúdios de podcast e produtoras de conteúdo.
+          </p>
+
+          {/* App Purpose Box */}
+          <div className="bg-[#111111] border border-white/8 rounded-2xl p-6 space-y-4">
+            <h2 className="text-xs font-black uppercase tracking-widest text-[#22c55e] flex items-center gap-2">
+              <Building2 className="w-4 h-4" /> Finalidade do Aplicativo
+            </h2>
+            <p className="text-xs text-zinc-300 leading-relaxed">
+              O software otimiza todas as etapas operacionais e financeiras de uma produtora audiovisual:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-zinc-400">
+              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
+                <span>CRM & Score Inteligente de Clientes</span>
+              </div>
+              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
+                <span>Gestão de Projetos e Prontuário</span>
+              </div>
+              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
+                <span>Controle Financeiro & DRE por Projeto</span>
+              </div>
+              <div className="flex items-center gap-2 bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <CheckCircle2 className="w-4 h-4 text-[#22c55e] shrink-0" />
+                <span>Checklists Pós-Produção & Ocorrências</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Google OAuth Use Notice */}
+          <div className="bg-[#111111] border border-white/8 rounded-2xl p-6 space-y-3">
+            <h2 className="text-xs font-black uppercase tracking-widest text-zinc-400 flex items-center gap-2">
+              <Lock className="w-4 h-4 text-amber-400" /> Autenticação Google OAuth
+            </h2>
+            <p className="text-xs text-zinc-400 leading-relaxed">
+              Utilizamos a autenticação segura do Google OAuth para validar a identidade dos colaboradores e gerenciar permissões de acesso por perfil (Admin, Comercial, Produção, Gestão e Financeiro).
+            </p>
+          </div>
         </div>
 
-        <div className="bg-[#111111] border border-white/8 rounded-2xl p-8 space-y-6">
+        {/* Right Column: Google Login Box */}
+        <div className="lg:col-span-5 bg-[#111111] border border-white/10 rounded-2xl p-8 space-y-6 shadow-2xl">
           <div>
-            <h1 className="text-xl font-black text-white">Acessar plataforma</h1>
+            <h2 className="text-xl font-black text-white">Acessar o Vencer HUB ERP</h2>
             <p className="text-xs text-zinc-500 mt-1">Entre com sua conta Google profissional</p>
           </div>
 
           <button
             onClick={signIn}
-            className="w-full flex items-center justify-center gap-3 bg-white text-gray-900 font-bold text-sm py-3 rounded-xl hover:bg-gray-100 transition-all shadow-lg"
+            className="w-full flex items-center justify-center gap-3 bg-white text-gray-900 font-bold text-sm py-3.5 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:scale-[1.01]"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -69,26 +132,35 @@ function ERPLogin() {
             <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl p-4">
               <p className="text-[11px] text-amber-400 font-semibold mb-1">Modo Demonstração</p>
               <p className="text-[10px] text-zinc-500 leading-relaxed">
-                Supabase não configurado. Clique em "Entrar com Google" para acessar o ERP como Admin Master (<code className="text-zinc-300">vencerhub@gmail.com</code>).
+                Clique no botão acima para testar o sistema como Admin Master (<code className="text-zinc-300">vencerhub@gmail.com</code>).
               </p>
             </div>
           )}
 
-          <div className="pt-2 border-t border-white/5 space-y-3">
-            <p className="text-[10px] text-zinc-600 text-center leading-relaxed">
-              Acesso restrito à equipe Vencer Hub.<br />
-              Novos usuários entram na fila para aprovação do administrador.
+          <div className="pt-4 border-t border-white/5 space-y-3">
+            <div className="flex items-center gap-2 text-[11px] text-zinc-500">
+              <ShieldCheck className="w-4 h-4 text-[#22c55e] shrink-0" />
+              <span>Conexão criptografada via Google OAuth 2.0</span>
+            </div>
+            <p className="text-[10px] text-zinc-600 leading-relaxed">
+              Novos usuários cadastrados entram na fila para aprovação do administrador master.
             </p>
-
-            <Link
-              to="/"
-              className="flex items-center justify-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors font-medium py-2 rounded-lg hover:bg-white/5"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" /> Voltar ao site principal
-            </Link>
           </div>
         </div>
-      </div>
+      </main>
+
+      {/* Footer Legal Links for Google OAuth Verification */}
+      <footer className="max-w-5xl mx-auto w-full pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 relative z-10">
+        <p>© 2026 Vencer Hub Produções Ltda. Todos os direitos reservados.</p>
+        <div className="flex items-center gap-6">
+          <Link to="/politica-de-privacidade" className="hover:text-white transition-colors">
+            Política de Privacidade (LGPD)
+          </Link>
+          <Link to="/termos-de-uso" className="hover:text-white transition-colors">
+            Termos de Serviço
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
@@ -109,7 +181,7 @@ function PendingApprovalScreen() {
           </span>
           <h2 className="text-xl font-black text-white mt-4">Acesso em análise</h2>
           <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Olá, <strong className="text-white">{currentUser?.name || 'membro'}</strong>! Sua solicitação de acesso foi enviada ao administrador do Vencer ERP (<code className="text-amber-400">vencerhub@gmail.com</code>).
+            Olá, <strong className="text-white">{currentUser?.name || 'membro'}</strong>! Sua solicitação de acesso ao Vencer HUB ERP foi enviada ao administrador (<code className="text-amber-400">vencerhub@gmail.com</code>).
           </p>
           <p className="text-[11px] text-zinc-500 mt-2">
             Assim que for aprovado e atribuído a um perfil, seus módulos serão liberados.
@@ -147,7 +219,7 @@ function RejectedScreen() {
         <div>
           <h2 className="text-xl font-black text-white">Solicitação Rejeitada</h2>
           <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Sua solicitação de acesso ao Vencer ERP não foi aprovada pelo administrador.
+            Sua solicitação de acesso ao Vencer HUB ERP não foi aprovada pelo administrador.
           </p>
           {currentUser?.notes && (
             <p className="text-xs text-zinc-500 mt-3 bg-red-500/5 p-3 rounded-lg border border-red-500/10">
@@ -178,14 +250,14 @@ function SuspendedScreen() {
         <div>
           <h2 className="text-xl font-black text-white">Conta Suspensa</h2>
           <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-            Seu acesso ao Vencer ERP foi temporariamente suspenso. Entre em contato com a diretoria para mais informações.
+            Seu acesso ao Vencer HUB ERP foi temporariamente suspenso. Entre em contato com a diretoria para mais informações.
           </p>
         </div>
         <button
-          onClick={signOut}
-          className="w-full bg-white/5 border border-white/10 text-xs font-bold text-white py-2.5 rounded-xl hover:bg-white/10 transition-all"
+          onClick={async () => { await signOut(); window.location.href = '/'; }}
+          className="w-full bg-white/5 border border-white/10 text-xs font-bold text-white py-2.5 rounded-xl hover:bg-white/10 transition-all flex items-center justify-center gap-2"
         >
-          Sair da conta
+          <ArrowLeft className="w-3.5 h-3.5" /> Voltar ao site principal
         </button>
       </div>
     </div>
