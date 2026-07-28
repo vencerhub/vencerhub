@@ -13,6 +13,8 @@ import { LegalModal } from './components/LegalModal';
 import { SERVICES_DATA } from './constants/servicesData';
 import { Check, Menu, X, Instagram, Camera, Zap } from 'lucide-react';
 import { ERPApp } from './erp/pages/ERPApp';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsPage } from './pages/TermsPage';
 
 const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -148,8 +150,8 @@ function PublicLayout({
                <div className="flex flex-col gap-3">
                  <Link to="/" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">Home</Link>
                  <button onClick={() => { window.scrollTo({top: 0, behavior: 'smooth'}); }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Voltar ao Topo</button>
-                 <button onClick={() => onOpenLegal('privacy')} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Política de Privacidade (LGPD)</button>
-                 <button onClick={() => onOpenLegal('terms')} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Termos de Uso</button>
+                 <Link to="/politica-de-privacidade" className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Política de Privacidade (LGPD)</Link>
+                 <Link to="/termos-de-uso" className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Termos de Uso</Link>
                  <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
                    <Camera className="w-3 h-3" /> Fotto (Galerias)
                  </a>
@@ -219,6 +221,28 @@ export default function App() {
               onOpenLegal={(type) => setLegalModalType(type)}
             >
               <ServiceDetail onOpenLead={() => setIsLeadModalOpen(true)} />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/politica-de-privacidade"
+          element={
+            <PublicLayout
+              onOpenLead={() => setIsLeadModalOpen(true)}
+              onOpenLegal={(type) => setLegalModalType(type)}
+            >
+              <PrivacyPolicyPage />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/termos-de-uso"
+          element={
+            <PublicLayout
+              onOpenLead={() => setIsLeadModalOpen(true)}
+              onOpenLegal={(type) => setLegalModalType(type)}
+            >
+              <TermsPage />
             </PublicLayout>
           }
         />
