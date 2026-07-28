@@ -247,6 +247,8 @@ export default function App() {
           }
         />
         <Route path="/erp/*" element={<ERPApp />} />
+        <Route path="/ERP/*" element={<ERPApp />} />
+        <Route path="/Erp/*" element={<ERPApp />} />
       </Routes>
     </BrowserRouter>
   );
