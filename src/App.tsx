@@ -9,7 +9,10 @@ import { Home } from './components/Home';
 import { ServiceDetail } from './components/ServiceDetail';
 import { FloatingAIChat } from './components/FloatingAIChat';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
-import { Check, Menu, X, Instagram, Camera } from 'lucide-react';
+import { LegalModal } from './components/LegalModal';
+import { SERVICES_DATA } from './constants/servicesData';
+import { Check, Menu, X, Instagram, Camera, Zap } from 'lucide-react';
+import { ERPApp } from './erp/pages/ERPApp';
 
 const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -31,12 +34,7 @@ const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
     <nav className="fixed top-0 w-full z-[80] bg-bg-dark/80 backdrop-blur-xl border-b border-border-dark h-[80px] flex items-center">
       <div className="max-w-7xl mx-auto px-6 md:px-10 w-full flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center -skew-x-12">
-             <Check className="text-black w-6 h-6" strokeWidth={4} />
-          </div>
-          <span className="font-sans font-black text-2xl tracking-tighter text-white uppercase italic">
-            Vencer<span className="text-primary not-italic">Hub</span>
-          </span>
+          <img src="/images/logo/logo.png" alt="VencerHub" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -117,61 +115,115 @@ const Navigation = ({ onOpenLead }: { onOpenLead?: () => void }) => {
   );
 };
 
+function PublicLayout({
+  children,
+  onOpenLead,
+  onOpenLegal,
+}: {
+  children: React.ReactNode;
+  onOpenLead: () => void;
+  onOpenLegal: (type: 'privacy' | 'terms') => void;
+}) {
+  return (
+    <div className="min-h-screen bg-bg-dark font-sans selection:bg-primary selection:text-black flex flex-col">
+      <FloatingAIChat />
+      <Navigation onOpenLead={onOpenLead} />
+      <main className="flex-1">
+        {children}
+      </main>
+      {/* Footer Cinematic */}
+      <footer className="py-32 border-t border-zinc-800 bg-bg-dark relative overflow-hidden">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-primary/5 blur-[120px] rounded-full" />
+        <div className="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center">
+              <img src="/images/logo/logo.png" alt="VencerHub" className="h-9 w-auto" />
+            </Link>
+            <p className="text-zinc-500 text-xs max-w-xs font-bold uppercase tracking-wider leading-relaxed text-shadow-sm">Ecossistema audiovisual de alto impacto. Estratégia, autoridade e posicionamento para quem busca escala real.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16">
+            <div className="space-y-4">
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Links</h4>
+               <div className="flex flex-col gap-3">
+                 <Link to="/" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">Home</Link>
+                 <button onClick={() => { window.scrollTo({top: 0, behavior: 'smooth'}); }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Voltar ao Topo</button>
+                 <button onClick={() => onOpenLegal('privacy')} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Política de Privacidade (LGPD)</button>
+                 <button onClick={() => onOpenLegal('terms')} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Termos de Uso</button>
+                 <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                   <Camera className="w-3 h-3" /> Fotto (Galerias)
+                 </a>
+                 <Link to="/erp" className="text-xs font-bold text-zinc-600 hover:text-zinc-400 transition-colors flex items-center gap-1 pt-2 border-t border-zinc-800/60">
+                   <Zap className="w-3 h-3 text-zinc-500" /> Área Restrita (ERP)
+                 </Link>
+               </div>
+            </div>
+            <div className="space-y-4">
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Serviços</h4>
+               <div className="flex flex-col gap-2.5">
+                 {SERVICES_DATA.map((s) => (
+                   <Link key={s.id} to={`/servico/${s.id}`} className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">
+                     {s.title}
+                   </Link>
+                 ))}
+               </div>
+            </div>
+            <div className="space-y-4 text-xs font-bold text-zinc-400">
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Localização e Contato</h4>
+               <p className="uppercase tracking-tight leading-relaxed">Av. Érico Veríssimo, 1140 <br/> Porto Alegre - RS</p>
+               <p className="mt-4 uppercase tracking-tight leading-relaxed">+55 51 99744-1369</p>
+               <p className="tracking-tight leading-relaxed">vencerhub@gmail.com</p>
+               <a href="https://www.instagram.com/vencerhub/" target="_blank" rel="noreferrer" className="flex items-center gap-2 mt-4 hover:text-white transition-colors">
+                  <Instagram className="w-5 h-5 text-primary" />
+                  <span className="uppercase tracking-wider">@vencerhub</span>
+               </a>
+               <p className="mt-8 text-zinc-600">© 2026 VencerHub</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 export default function App() {
   const [isLeadModalOpen, setIsLeadModalOpen] = React.useState(false);
+  const [legalModalType, setLegalModalType] = React.useState<'privacy' | 'terms' | null>(null);
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-bg-dark font-sans selection:bg-primary selection:text-black">
-        <FloatingAIChat />
-        <Navigation onOpenLead={() => setIsLeadModalOpen(true)} />
-        <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
-        
-        <Routes>
-          <Route path="/" element={<Home onOpenLead={() => setIsLeadModalOpen(true)} />} />
-          <Route path="/servico/:serviceId" element={<ServiceDetail onOpenLead={() => setIsLeadModalOpen(true)} />} />
-        </Routes>
-
-        {/* Footer Cinematic */}
-        <footer className="py-32 border-t border-zinc-800 bg-bg-dark relative overflow-hidden">
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-          <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-primary/5 blur-[120px] rounded-full" />
-          <div className="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-start gap-12 relative z-10">
-            <div className="space-y-6">
-              <Link to="/" className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-primary flex items-center justify-center -skew-x-12 led-bold-glow">
-                   <Check className="text-black w-4 h-4" strokeWidth={4} />
-                </div>
-                <span className="font-sans font-black text-xl tracking-tighter text-white uppercase italic">Vencer<span className="gradient-text-premium not-italic">Hub</span></span>
-              </Link>
-              <p className="text-zinc-500 text-xs max-w-xs font-bold uppercase tracking-wider leading-relaxed text-shadow-sm">Lugar de empreendedores focados em resultado. Audiovisual premium.</p>
-            </div>
-            <div className="flex flex-col md:flex-row gap-12 md:gap-24">
-              <div className="space-y-4">
-                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Links</h4>
-                 <div className="flex flex-col gap-3">
-                   <Link to="/" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">Home</Link>
-                   <button onClick={() => { window.scrollTo({top: 0, behavior: 'smooth'}); }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Voltar ao Topo</button>
-                   <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                     <Camera className="w-3 h-3" /> Fotto (Galerias)
-                   </a>
-                 </div>
-              </div>
-              <div className="space-y-4 text-xs font-bold text-zinc-400">
-                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Localização e Contato</h4>
-                 <p className="uppercase tracking-tight leading-relaxed">Av. Érico Veríssimo, 1140 <br/> Porto Alegre - RS</p>
-                 <p className="mt-4 uppercase tracking-tight leading-relaxed">+55 51 99744-1369</p>
-                 <p className="tracking-tight leading-relaxed">contato@vencerhub.com</p>
-                 <a href="https://www.instagram.com/vencerhub/" target="_blank" rel="noreferrer" className="flex items-center gap-2 mt-4 hover:text-white transition-colors">
-                    <Instagram className="w-5 h-5 text-primary" />
-                    <span className="uppercase tracking-wider">@vencerhub</span>
-                 </a>
-                 <p className="mt-8 text-zinc-600">© 2026 VencerHub</p>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
+      <LegalModal
+        isOpen={legalModalType !== null}
+        type={legalModalType}
+        onClose={() => setLegalModalType(null)}
+      />
+      
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PublicLayout
+              onOpenLead={() => setIsLeadModalOpen(true)}
+              onOpenLegal={(type) => setLegalModalType(type)}
+            >
+              <Home onOpenLead={() => setIsLeadModalOpen(true)} />
+            </PublicLayout>
+          }
+        />
+        <Route
+          path="/servico/:serviceId"
+          element={
+            <PublicLayout
+              onOpenLead={() => setIsLeadModalOpen(true)}
+              onOpenLegal={(type) => setLegalModalType(type)}
+            >
+              <ServiceDetail onOpenLead={() => setIsLeadModalOpen(true)} />
+            </PublicLayout>
+          }
+        />
+        <Route path="/erp/*" element={<ERPApp />} />
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -248,7 +248,9 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                 Trabalhos <br /> <span className="gradient-text-premium not-italic">Recentes.</span>
               </h2>
               <p className="text-zinc-400 text-sm font-bold uppercase tracking-wider leading-relaxed mt-6">
-                Clique em qualquer projeto abaixo para navegar pelas galerias exclusivas de entrega aos nossos parceiros.
+                {service.id === 'podcast'
+                  ? 'Clique em qualquer projeto abaixo para navegar pelos programas exclusivos de entrega aos nossos parceiros.'
+                  : 'Clique em qualquer projeto abaixo para navegar pelas galerias exclusivas de entrega aos nossos parceiros.'}
               </p>
             </div>
 
@@ -278,7 +280,7 @@ export const ServiceDetail = ({ onOpenLead }: { onOpenLead?: () => void }) => {
                   
                   <div className="absolute bottom-0 left-0 w-full p-8 z-20">
                     <span className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 text-primary text-[8px] font-black uppercase tracking-widest rounded-full mb-3">
-                      Acessar Galeria
+                      {service.id === 'podcast' ? 'Acessar Programa' : 'Acessar Galeria'}
                     </span>
                     <h4 className="text-xl font-black uppercase text-white tracking-tight leading-tight mb-2 group-hover:text-primary transition-colors">
                       {item.title}

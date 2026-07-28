@@ -42,8 +42,8 @@ export const AboutUs = () => {
              <div className="aspect-square bg-bg-dark border border-zinc-800 p-2 transform -rotate-2 hover:rotate-0 transition-all duration-700 led-warm-glow shadow-xl">
                <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent pointer-events-none z-20" />
                <img 
-                 src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                 alt="Networking Hub Studio"
+                 src="/images/erico/Mesasom.jpg" 
+                 alt="Mesasom Estúdio Vencer Hub"
                  className="w-full h-full object-cover relative z-10 transition-all duration-700 filter contrast-125"
                  referrerPolicy="no-referrer"
                />

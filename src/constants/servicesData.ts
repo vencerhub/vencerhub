@@ -29,7 +29,7 @@ export const SERVICES_DATA: Service[] = [
       {
         title: "Estúdio Vencer Hub (Fotos)",
         url: "https://vencerhub.pixieset.com/vencerhub/",
-        image: "/images/centro/studio.jpeg",
+        image: "/images/erico/Erico.jpg",
         description: "Confira a estrutura física, iluminação e cenografia do nosso estúdio premium."
       },
       {
