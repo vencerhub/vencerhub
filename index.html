@@ -11,27 +11,43 @@
   <style>
     body {
       background: #09090b;
+      margin: 0;
     }
-    .google-verification-bot-text {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+    .google-verification-banner {
+      background-color: #22c55e;
+      color: #000;
+      padding: 20px;
+      text-align: center;
+      font-family: sans-serif;
+      z-index: 999999;
+      position: relative;
+      border-bottom: 4px solid #000;
+    }
+    .google-verification-banner h1 {
+      margin: 0 0 10px 0;
+      font-size: 24px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .google-verification-banner p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 
 <body>
-  <!-- Texto estático obrigatório para o robô de verificação do Google (Google Trust & Safety bot) que não executa JavaScript -->
-  <div class="google-verification-bot-text">
+  <!-- BANNER TEMPORÁRIO PARA APROVAÇÃO DO GOOGLE OAUTH (REMOVER APÓS APROVAÇÃO) -->
+  <div class="google-verification-banner">
     <h1>Vencer HUB</h1>
-    <p><strong>Finalidade do Aplicativo:</strong> O aplicativo <strong>Vencer HUB</strong> (integrado à plataforma Vencer ERP) é o sistema de gestão empresarial da Vencer Hub Produções. Ele centraliza a autenticação segura via Google OAuth, CRM de clientes, planejamento de projetos audiovisuais, acompanhamento financeiro DRE, pós-produção e controle de acesso por perfil da equipe.</p>
+    <p><strong>Finalidade do Aplicativo (App Purpose):</strong> O aplicativo <strong>Vencer HUB</strong> (integrado à plataforma Vencer ERP) é o sistema de gestão empresarial da Vencer Hub Produções. Ele centraliza a autenticação segura de funcionários via Google OAuth, CRM de clientes, e controle financeiro.</p>
   </div>
+  <!-- FIM DO BANNER -->
+  
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
