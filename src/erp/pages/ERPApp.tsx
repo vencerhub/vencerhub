@@ -62,11 +62,11 @@ function ERPLogin() {
           </div>
 
           <h1 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tight leading-tight">
-            Vencer HUB ERP
+            Vencer HUB
           </h1>
 
           <p className="text-sm md:text-base text-zinc-400 leading-relaxed font-medium">
-            O <strong>Vencer HUB ERP</strong> é a plataforma integrada de gestão empresarial desenvolvida especialmente para empresas de produção audiovisual, estúdios de podcast e produtoras de conteúdo.
+            O <strong>Vencer HUB</strong> (plataforma Vencer ERP) é o aplicativo integrado de gestão empresarial desenvolvido para empresas de produção audiovisual, estúdios de podcast e produtoras de conteúdo.
           </p>
 
           {/* App Purpose Box */}
@@ -111,7 +111,7 @@ function ERPLogin() {
         {/* Right Column: Google Login Box */}
         <div className="lg:col-span-5 bg-[#111111] border border-white/10 rounded-2xl p-8 space-y-6 shadow-2xl">
           <div>
-            <h2 className="text-xl font-black text-white">Acessar o Vencer HUB ERP</h2>
+            <h2 className="text-xl font-black text-white">Acessar o Vencer HUB</h2>
             <p className="text-xs text-zinc-500 mt-1">Entre com sua conta Google profissional</p>
           </div>
 

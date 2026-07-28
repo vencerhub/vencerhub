@@ -29,7 +29,7 @@ export const Hero = ({ onOpenLead }: { onOpenLead?: () => void }) => {
           className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 glass-card text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8 shadow-2xl"
         >
           <Sparkles className="w-3 h-3 text-amber-500" />
-          O Padrão de quem Foca em Resultado
+          Vencer HUB — O Padrão de quem Foca em Resultado
         </motion.div>
         
         <motion.h1 
