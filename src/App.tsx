@@ -11,7 +11,7 @@ import { FloatingAIChat } from './components/FloatingAIChat';
 import { LeadCaptureModal } from './components/LeadCaptureModal';
 import { LegalModal } from './components/LegalModal';
 import { SERVICES_DATA } from './constants/servicesData';
-import { Check, Menu, X, Instagram, Camera } from 'lucide-react';
+import { Check, Menu, X, Instagram, Camera, ShieldCheck, MessageCircle } from 'lucide-react';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 
@@ -145,16 +145,18 @@ function PublicLayout({
           </div>
           <div className="flex flex-col sm:flex-row flex-wrap gap-12 md:gap-16">
             <div className="space-y-4">
-               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Links</h4>
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Acesso Rápido</h4>
                <div className="flex flex-col gap-3">
-                 <Link to="/" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors">Home</Link>
-                 <button onClick={() => { window.scrollTo({top: 0, behavior: 'smooth'}); }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Voltar ao Topo</button>
-                 <Link to="/politica-de-privacidade" className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Política de Privacidade (LGPD)</Link>
-                 <Link to="/termos-de-uso" className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Termos de Uso</Link>
-                 <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                 <button onClick={() => { window.location.href = '/#sobre'; }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Sobre Nós</button>
+                 <button onClick={() => { window.location.href = '/#equipe'; }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Equipe</button>
+                 <button onClick={() => { window.location.href = '/#servicos'; }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">O que entregamos</button>
+                 <button onClick={() => { window.location.href = '/#faq'; }} className="text-left text-xs font-bold text-zinc-400 hover:text-white transition-colors">Perguntas Frequentes</button>
+                 <a href="https://vencerhub.fotto.com.br/" target="_blank" rel="noreferrer" className="text-xs font-bold text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1.5 mt-1">
                    <Camera className="w-3 h-3" /> Fotto (Galerias)
                  </a>
-
+                 <a href="https://app.vencerhub.com" target="_blank" rel="noreferrer" className="text-xs font-bold text-primary hover:text-white transition-colors flex items-center gap-1.5 mt-1">
+                   <ShieldCheck className="w-3 h-3" /> Vencer HUB ERP (Restrito)
+                 </a>
                </div>
             </div>
             <div className="space-y-4">
@@ -168,16 +170,34 @@ function PublicLayout({
                </div>
             </div>
             <div className="space-y-4 text-xs font-bold text-zinc-400">
-               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Localização e Contato</h4>
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Localização</h4>
                <p className="uppercase tracking-tight leading-relaxed">Av. Érico Veríssimo, 1140 <br/> Porto Alegre - RS</p>
-               <p className="mt-4 uppercase tracking-tight leading-relaxed">+55 51 99744-1369</p>
-               <p className="tracking-tight leading-relaxed">vencerhub@gmail.com</p>
-               <a href="https://www.instagram.com/vencerhub/" target="_blank" rel="noreferrer" className="flex items-center gap-2 mt-4 hover:text-white transition-colors">
-                  <Instagram className="w-5 h-5 text-primary" />
-                  <span className="uppercase tracking-wider">@vencerhub</span>
-               </a>
-               <p className="mt-8 text-zinc-600">© 2026 VencerHub</p>
             </div>
+            <div className="space-y-4 text-xs font-bold text-zinc-400">
+               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary led-bold-text">Contato</h4>
+               <div className="flex flex-col gap-3">
+                 <p className="tracking-tight leading-relaxed">vencerhub@gmail.com</p>
+                 <a href="https://www.instagram.com/vencerhub/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <Instagram className="w-4 h-4 text-primary" />
+                    <span className="uppercase tracking-wider">@vencerhub</span>
+                 </a>
+               </div>
+               <div className="mt-4 space-y-2">
+                 <p className="uppercase tracking-tight leading-relaxed">+55 51 99744-1369</p>
+                 <a href="https://wa.me/5551997441369" target="_blank" rel="noreferrer" className="inline-flex bg-[#25D366] text-white px-3 py-1.5 rounded-md text-[10px] hover:bg-[#1ebe57] transition-colors font-black uppercase tracking-wider items-center gap-1.5">
+                   <MessageCircle className="w-3.5 h-3.5" /> FALE CONOSCO
+                 </a>
+               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* BOTTOM BAR */}
+        <div className="border-t border-zinc-800/50 mt-16 pt-8 max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600 font-medium relative z-10">
+          <p>© 2026 VencerHub. Site desenvolvido por Vencer HUB.</p>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link to="/politica-de-privacidade" className="hover:text-zinc-400 transition-colors">Política de Privacidade (LGPD)</Link>
+            <Link to="/termos-de-uso" className="hover:text-zinc-400 transition-colors">Termos de Uso</Link>
           </div>
         </div>
       </footer>
