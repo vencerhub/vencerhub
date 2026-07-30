@@ -9,7 +9,7 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: "Onde a Vencer Hub está localizada?",
+    question: "Onde a VENCER HUB está localizada?",
     answer: "Estamos situados na Av. Érico Veríssimo, 1140, no bairro Menino Deus, em Porto Alegre - RS. Dispomos de estúdios modernos, infraestrutura acústica de alta performance, fácil acesso e suporte técnico completo para produções de nível corporativo e artístico."
   },
   {
@@ -29,7 +29,7 @@ const faqs = [
     answer: "O processo é simples e rápido: clique no botão de contato para falar com nosso time estratégico. Entenderemos seu objetivo de negócio, definiremos a melhor estrutura de pacote e agendaremos as diárias conforme a sua disponibilidade."
   },
   {
-    question: "Posso utilizar a estrutura da Vencer Hub para eventos privativos ou cursos online?",
+    question: "Posso utilizar a estrutura da VENCER HUB para eventos privativos ou cursos online?",
     answer: "Com certeza. Nosso espaço conta com infraestrutura completa para Live Streaming em tempo real, gravação de módulos de cursos online, workshops corporativos e treinamentos com total estabilidade de sinal e qualidade técnica."
   }
 ];

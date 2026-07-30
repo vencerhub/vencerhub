@@ -23,7 +23,7 @@ export function TermsPage() {
               Termos de Serviço
             </h1>
             <p className="text-xs text-zinc-500 mt-1">
-              Vencer Hub & Vencer ERP · Condições de Uso da Plataforma e Aplicações
+              VENCER HUB & Vencer ERP · Condições de Uso da Plataforma e Aplicações
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export function TermsPage() {
             <span className="text-[#22c55e]">1.</span> Aceitação dos Termos
           </h2>
           <p>
-            Ao acessar o site da <strong>Vencer Hub</strong> (<code className="text-amber-400">vencerhub.com</code>) ou utilizar o sistema de gestão <strong>Vencer ERP</strong>, você concorda expressamente em cumprir e estar vinculado a estes Termos de Serviço, bem como à nossa <Link to="/politica-de-privacidade" className="text-[#22c55e] underline font-bold">Política de Privacidade</Link>.
+            Ao acessar o site da <strong>VENCER HUB</strong> (<code className="text-amber-400">vencerhub.com</code>) ou utilizar o sistema de gestão <strong>Vencer ERP</strong>, você concorda expressamente em cumprir e estar vinculado a estes Termos de Serviço, bem como à nossa <Link to="/politica-de-privacidade" className="text-[#22c55e] underline font-bold">Política de Privacidade</Link>.
           </p>
           <p>
             Se você não concordar com qualquer disposição destes termos, não deverá acessar nem utilizar nossos serviços ou aplicações.
@@ -51,7 +51,7 @@ export function TermsPage() {
             <span className="text-[#22c55e]">2.</span> Descrição do Serviço e do Vencer ERP
           </h2>
           <p>
-            A Vencer Hub oferece serviços de produção audiovisual premium, estúdio de podcasts, criação de conteúdo e a plataforma integrada de gestão empresarial <strong>Vencer ERP</strong>.
+            A VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75) oferece serviços de produção audiovisual premium, estúdio de podcasts, criação de conteúdo e a plataforma integrada de gestão empresarial <strong>Vencer ERP</strong>.
           </p>
           <p>
             O <strong>Vencer ERP</strong> é um software como serviço (SaaS) restrito e especializado para controle de CRM, projetos, finanças, ocorrencias, checklists operacionais e inteligência de dados corporativos.
@@ -105,10 +105,10 @@ export function TermsPage() {
             <span className="text-[#22c55e]">5.</span> Propriedade Intelectual
           </h2>
           <p>
-            Todos os direitos de propriedade intelectual referentes ao software Vencer ERP, logotipos, layouts, marcas registradas, metodologias de produção audiovisual e conteúdos institucionais pertencem exclusivamente à <strong>Vencer Hub Produções Ltda.</strong>
+            Todos os direitos de propriedade intelectual referentes ao software Vencer ERP, logotipos, layouts, marcas registradas, metodologias de produção audiovisual e conteúdos institucionais pertencem exclusivamente à <strong>VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75)</strong>
           </p>
           <p>
-            Nada nestes termos concede ao usuário qualquer direito de propriedade sobre as marcas ou sistemas da Vencer Hub.
+            Nada nestes termos concede ao usuário qualquer direito de propriedade sobre as marcas ou sistemas da VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75).
           </p>
         </section>
 

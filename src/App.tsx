@@ -155,7 +155,7 @@ function PublicLayout({
                    <Camera className="w-3 h-3" /> Fotto (Galerias)
                  </a>
                  <a href="https://app.vencerhub.com" target="_blank" rel="noreferrer" className="text-xs font-bold text-primary hover:text-white transition-colors flex items-center gap-1.5 mt-1">
-                   <ShieldCheck className="w-3 h-3" /> Vencer HUB ERP (Restrito)
+                   <ShieldCheck className="w-3 h-3" /> Vencer Workspace (Restrito)
                  </a>
                </div>
             </div>
@@ -194,7 +194,7 @@ function PublicLayout({
         
         {/* BOTTOM BAR */}
         <div className="border-t border-zinc-800/50 mt-16 pt-8 max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600 font-medium relative z-10">
-          <p>© 2026 VencerHub. Site desenvolvido por Vencer HUB.</p>
+          <p>© 2026 VencerHub. Site desenvolvido por VENCER HUB.</p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/politica-de-privacidade" className="hover:text-zinc-400 transition-colors">Política de Privacidade (LGPD)</Link>
             <Link to="/termos-de-uso" className="hover:text-zinc-400 transition-colors">Termos de Uso</Link>

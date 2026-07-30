@@ -18,7 +18,7 @@ export const AppPurposeSection = () => {
                 Vencer HUB
               </h2>
               <p className="text-sm md:text-base text-zinc-300 leading-relaxed font-medium">
-                <strong>Finalidade do Aplicativo:</strong> O aplicativo <strong>Vencer HUB</strong> (integrado à plataforma Vencer ERP) é o sistema de gestão empresarial da Vencer Hub Produções. Ele centraliza a autenticação segura via Google OAuth, CRM de clientes, planejamento de projetos audiovisuais, acompanhamento financeiro DRE, pós-produção e controle de acesso por perfil.
+                <strong>Finalidade do Aplicativo:</strong> O aplicativo <strong>Vencer HUB</strong> (integrado à plataforma Vencer ERP) é o sistema de gestão empresarial da VENCER HUB. Ele centraliza a autenticação segura via Google OAuth, CRM de clientes, planejamento de projetos audiovisuais, acompanhamento financeiro DRE, pós-produção e controle de acesso por perfil.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-zinc-400">
                 <div className="flex items-center gap-2 bg-black/40 p-3 rounded-xl border border-white/5">

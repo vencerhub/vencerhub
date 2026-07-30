@@ -23,7 +23,7 @@ export function PrivacyPolicyPage() {
               Política de Privacidade
             </h1>
             <p className="text-xs text-zinc-500 mt-1">
-              Vencer Hub & Vencer ERP · Em conformidade com a LGPD (Lei nº 13.709/2018) e Diretrizes do Google OAuth
+              VENCER HUB & Vencer ERP · Em conformidade com a LGPD (Lei nº 13.709/2018) e Diretrizes do Google OAuth
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export function PrivacyPolicyPage() {
             <span className="text-[#22c55e]">1.</span> Visão Geral e Compromisso
           </h2>
           <p>
-            A <strong>Vencer Hub Produções Ltda.</strong> ("Vencer Hub", "nós"), operadora do sistema <strong>Vencer ERP</strong>, está profundamente comprometida com a privacidade, segurança e proteção dos dados pessoais de seus clientes, colaboradores e usuários.
+            A <strong>VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75)</strong> ("VENCER HUB", "nós"), operadora do sistema <strong>Vencer ERP</strong>, está profundamente comprometida com a privacidade, segurança e proteção dos dados pessoais de seus clientes, colaboradores e usuários.
           </p>
           <p>
             Esta Política de Privacidade descreve de forma clara e transparente como coletamos, utilizamos, armazenamos, tratamos e protegemos seus dados pessoais ao acessar nosso site (<code className="text-amber-400">vencerhub.com</code>) ou utilizar a aplicação Vencer ERP via autenticação Google OAuth.
@@ -112,7 +112,7 @@ export function PrivacyPolicyPage() {
             <span className="text-[#22c55e]">5.</span> Compartilhamento e Não Comercialização de Dados
           </h2>
           <p>
-            A Vencer Hub <strong>NÃO vende, aluga, troca ou comercializa</strong> dados pessoais ou informações obtidas via Google OAuth em nenhuma hipótese.
+            A VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75) <strong>NÃO vende, aluga, troca ou comercializa</strong> dados pessoais ou informações obtidas via Google OAuth em nenhuma hipótese.
           </p>
           <p>
             O compartilhamento de dados ocorre unicamente com infraestruturas estritamente necessárias para a operação da plataforma (ex: Supabase para banco de dados e autenticação segura), sempre sob criptografia e contratos que garantem sigilo e conformidade com a LGPD.
@@ -156,7 +156,7 @@ export function PrivacyPolicyPage() {
           </h2>
           <p>Para dúvidas, solicitações ou exercício de direitos referentes à privacidade e proteção de dados:</p>
           <div className="bg-black/40 border border-zinc-800 rounded-xl p-4 text-xs space-y-1">
-            <p className="font-bold text-white">Vencer Hub Produções Ltda.</p>
+            <p className="font-bold text-white">VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75)</p>
             <p className="text-zinc-400">Endereço: Av. Érico Veríssimo, 1140 — Bairro Menino Deus — Porto Alegre/RS</p>
             <p className="text-zinc-400">E-mail: <a href="mailto:vencerhub@gmail.com" className="text-[#22c55e] font-bold">vencerhub@gmail.com</a></p>
             <p className="text-zinc-400">Telefone/WhatsApp: +55 51 99744-1369</p>

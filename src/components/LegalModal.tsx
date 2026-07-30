@@ -29,7 +29,7 @@ export function LegalModal({ isOpen, type, onClose }: LegalModalProps) {
               <h2 className="text-lg font-black text-white uppercase italic">
                 {isPrivacy ? 'Política de Privacidade (LGPD)' : 'Termos de Uso'}
               </h2>
-              <p className="text-xs text-zinc-500">Vencer Hub · Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</p>
+              <p className="text-xs text-zinc-500">VENCER HUB · Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</p>
             </div>
           </div>
           <button
@@ -47,7 +47,7 @@ export function LegalModal({ isOpen, type, onClose }: LegalModalProps) {
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">1. Introdução e Compromisso</h3>
                 <p>
-                  A <strong>Vencer Hub Produções Ltda.</strong> está comprometida com a proteção dos dados pessoais de seus clientes, colaboradores e visitantes, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018). Esta política descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais.
+                  A <strong>VENCER HUB CONEXOES & NEGOCIOS LTDA (CNPJ 47.915.570/0001-75)</strong> está comprometida com a proteção dos dados pessoais de seus clientes, colaboradores e visitantes, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018). Esta política descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais.
                 </p>
               </section>
 
@@ -75,7 +75,7 @@ export function LegalModal({ isOpen, type, onClose }: LegalModalProps) {
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">4. Compartilhamento de Dados</h3>
                 <p>
-                  A Vencer Hub não vende ou aluga dados pessoais a terceiros. O compartilhamento ocorre exclusivamente com prestadores de serviços essenciais (provedores de infraestrutura em nuvem, processadores de pagamento e órgãos fiscais), mediante estritas obrigações de confidencialidade.
+                  A VENCER HUB não vende ou aluga dados pessoais a terceiros. O compartilhamento ocorre exclusivamente com prestadores de serviços essenciais (provedores de infraestrutura em nuvem, processadores de pagamento e órgãos fiscais), mediante estritas obrigações de confidencialidade.
                 </p>
               </section>
 
@@ -98,28 +98,28 @@ export function LegalModal({ isOpen, type, onClose }: LegalModalProps) {
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">1. Aceite dos Termos</h3>
                 <p>
-                  Ao acessar o site da <strong>Vencer Hub</strong> ou utilizar a plataforma <strong>Vencer ERP</strong>, você concorda expressamente com os presentes Termos de Uso. Caso não concorde com qualquer disposição, solicitamos que não utilize nossos serviços.
+                  Ao acessar o site da <strong>VENCER HUB</strong> ou utilizar a plataforma <strong>Vencer ERP</strong>, você concorda expressamente com os presentes Termos de Uso. Caso não concorde com qualquer disposição, solicitamos que não utilize nossos serviços.
                 </p>
               </section>
 
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">2. Uso da Plataforma e do ERP</h3>
                 <p>
-                  O Vencer ERP é um sistema de gestão de propriedade exclusiva da Vencer Hub. O acesso à plataforma é restrito a usuários previamente cadastrados e autorizados. É proibido compartilhar credenciais ou tentar burlar os controles de acesso.
+                  O Vencer ERP é um sistema de gestão de propriedade exclusiva da VENCER HUB. O acesso à plataforma é restrito a usuários previamente cadastrados e autorizados. É proibido compartilhar credenciais ou tentar burlar os controles de acesso.
                 </p>
               </section>
 
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">3. Propriedade Intelectual</h3>
                 <p>
-                  Todo o conteúdo disponibilizado pela Vencer Hub (marcas, logotipos, layouts, código-fonte, metodologias de produção e materiais audiovisuais) é protegido pelas leis de propriedade intelectual. É vedada a reprodução não autorizada.
+                  Todo o conteúdo disponibilizado pela VENCER HUB (marcas, logotipos, layouts, código-fonte, metodologias de produção e materiais audiovisuais) é protegido pelas leis de propriedade intelectual. É vedada a reprodução não autorizada.
                 </p>
               </section>
 
               <section className="space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase">4. Responsabilidades</h3>
                 <p>
-                  A Vencer Hub empenha seus melhores esforços para garantir a disponibilidade contínua da plataforma, mas não se responsabiliza por interrupções causadas por indisponibilidade de terceiros, falhas de conexão à internet ou uso inadequado por parte do usuário.
+                  A VENCER HUB empenha seus melhores esforços para garantir a disponibilidade contínua da plataforma, mas não se responsabiliza por interrupções causadas por indisponibilidade de terceiros, falhas de conexão à internet ou uso inadequado por parte do usuário.
                 </p>
               </section>
 
